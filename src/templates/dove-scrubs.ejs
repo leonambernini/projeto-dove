@@ -1,0 +1,146 @@
+<div class="lp-dove-scrubs">
+	<% if (!exibirContador) { %>
+    	<!-- Exibe cronômetro -->
+		<section class="lp-cronometro" data-final="<%= timerEnd %>">
+			<div class="row no-gutters">
+				<div class="col-12 col-md-5">
+					<div class="lp-cronometro-coluna-esquerda">
+						<div class="lp-cronometro-coluna-esquerda-conteudo">
+							<div class="lp-cronometro-coluna-esquerda-conteudo-text">
+								<h2>Dove <b>beauty scrub</b></h2>
+								<p>Falta pouco para garantir seu <b>Dove Beauty Scrub!</b></p>
+							</div>
+
+							<div class="lp-cronometro-colua-esqueda-effect"></div>
+
+							<img src="https://d1a9qnv764bsoo.cloudfront.net/stores/006/176/073/rte/Logo Beauty Scrub.png" alt="Dove beauty scrub" class="img-fluid" />
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-7">
+					<div class="lp-cronometro-coluna-direita">
+						<div class="lp-cronometro-coluna-direita-efeito-1"></div>
+						<div class="lp-cronometro-coluna-direita-relogio">
+							<div class="lp-cronometro-coluna-direita-relogio-hora">
+								<b>00</b>
+								<span>HORAS</span>
+							</div>
+							<span class="lp-cronometro-coluna-direita-relogio-divisor">:</span>
+							<div class="lp-cronometro-coluna-direita-relogio-minuto">
+								<b>00</b>
+								<span>MINUTOS</span>
+							</div>
+							<span class="lp-cronometro-coluna-direita-relogio-divisor">:</span>
+							<div class="lp-cronometro-coluna-direita-relogio-segundos">
+								<b>00</b>
+								<span>SEGUNDOS</span>
+							</div>
+						</div>
+						<div class="lp-cronometro-coluna-direita-efeito-2"></div>
+						<p>Fique de olho no relógio e garanta seu código exclusivo assim que a <b>PRÉ-VENDA ABRIR</b></p>
+					</div>
+				</div>
+			</div>
+		</section>
+	<% } %>
+
+	<% if ( !liberarProdutos) { %>
+		<section class="lp-e-agora">
+			<h2>É AGORA!</h2>
+			<div class="row no-gutters">
+				<div class="col-12 col-md-9">
+					<img src="https://d1a9qnv764bsoo.cloudfront.net/stores/006/176/073/rte/Pódio 1.png" alt="Podio" class="img-fluid"/>
+				</div>
+				<div class="col-12 col-md-3">
+					<div class="lp-e-agora-content">
+						<p>Garanta já seu <b class="lp-e-agora-conteudo-txt-dove">DOVE BEAUTY SCRUB</b> com <b>FRETE GRÁTIS</b> <br />e seja uma das primeiras pessoas
+						a sentir essa novidade na pele.</p>
+					
+						<button class="btn-dove js-btn-scroll-to-produtos" data-scroll="#produtos">EU QUERO</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section-featured-home lp-produtos" id="produtos">
+			<div class="js-products-custom-container container mega-container">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="js-products-custom-title section-title h3 mt-3 mb-4 pb-2 text-center">beauty scrubs</h2>
+						<div class="js-products-custom-grid row row-grid justify-content-center" data-desktop-columns="3" data-mobile-columns="1" id="lista-de-produtos">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	<% } %>
+
+	<!-- 
+	<% if (!customerId) { %>
+		<section class="lp-pre-cadastro" id="cadastro">
+			<div class="container">
+				<h2>CADASTRO</h2>
+				<div class="row justify-content-center">
+					<div class="lp-pre-cadastro-conteudo">
+						<form class="lp-pre-cadastro-form">
+							<div class="form-group">
+								<div class="form-row align-items-center">
+									<label class="col-12 col-md-2" for="name">Nome:</label>
+									<input type="text" placeholder="Digite seu nome" class="col-12 col-md-10" name="name" id="name" required />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="form-row align-items-center">
+									<label class="col-12 col-md-2" for="email">E-mail:</label>
+									<input type="email" class="col-12 col-md-10"  placeholder="Digite seu melhor e-mail" name="email" id="email" required />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="form-row align-items-center">
+									<label class="col-12 col-md-2" for="idade">Idade:</label>
+									<input type="number" name="idade" id="idade"  class="col-12 col-md-10" required />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="form-row align-items-center">
+									<label class="col-12 col-md-2" for="password">Senha:</label>
+									<input type="password" name="password" id="password"  class="col-12 col-md-10" required />
+								</div>
+							</div>
+							<br />
+							<div class="lp-pre-cadastro-form-check-box">
+								<div class="lp-pre-cadastro-form-check">
+									<input type="checkbox" class="form-check-input" id="exampleCheck1">
+									<label class="form-check-label" for="exampleCheck1">Lorem Ipsum is simply dummy text of the printing and typesetting</label>
+								</div>
+								<div class="lp-pre-cadastro-form-check">
+									<input type="checkbox" class="form-check-input" id="exampleCheck2">
+									<label class="form-check-label" for="exampleCheck2">Lorem Ipsum is simply dummy text of the printing and typesetting</label>
+								</div>
+							</div>
+
+							<button type="submit" class="lp-pre-cadastro-form-cta mt-3">ENVIAR</button>
+						</form>
+						
+						<button type="button" class="btn btn-link mx-auto mt-4 d-table" data-modal="login">Ja me cadastrei, clique aqui para fazer login!</button>
+					</div>
+				</div>
+			</div>
+		</section>
+	<% } %>
+	
+	<% if (!customerId) { %>
+		<div class="lp-modal" id="login" style="display: none;">
+			<div class="lp-modal-mask"></div>
+			<div class="lp-modal-content">
+				<div class="lp-modal-header">
+					<h3>Faça Login</h3>
+					<button class="lp-modal-close">&times;</button>
+				</div>
+				<div class="lp-modal-body">
+					<div id="js-form-login"></div>
+				</div>
+			</div>
+		</div>
+	<% } %>
+	-->
+</div>

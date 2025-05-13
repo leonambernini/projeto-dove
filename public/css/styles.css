@@ -1,0 +1,569 @@
+@import url("./styles-root.css");
+
+
+.lp-dove-scrubs,
+.lp-dove-scrubs section {
+    min-height: 100vh;
+    position: relative;
+}
+
+[class*="lp-effect"] {
+    position: absolute;
+    z-index: 3;
+    height: 4px;
+    width: 40%;
+    background: #cc9214;
+    background: linear-gradient(90deg, rgba(204, 146, 20, 1) 0%, rgba(213, 178, 101, 1) 43%, rgba(181, 136, 40, 1) 100%);
+}
+
+.lp-dove-scrubs .container {
+    max-width: 1600px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    margin: auto;
+}
+
+.lp-banner-principal {
+    background-color: #fff;
+}
+
+.lp-banner-principal .lp-effect-1 {
+    right: 0;
+    top: calc(8% - 2px);
+}
+
+.lp-banner-principal .lp-effect-2 {
+    left: 0;
+    top: calc(100vh - 23% - 2px);
+}
+
+.lp-banner-principal .lp-effect-3 {
+    width: 30%;
+    right: 0;
+    top: calc(100vh - 19%);
+}
+
+.lp-banner-principal .lp-effect-4 {
+    width: 34%;
+    left: 3%;
+    bottom: 5%;
+}
+
+.lp-banner-principal-banner {
+    background-color: #e6f0ff;
+    position: absolute;
+    top: 8%;
+    bottom: 23%;
+    left: 8%;
+    right: 8%;
+    z-index: 1;
+}
+
+.lp-banner-principal h1 {
+    font-size: 40px;
+    line-height: 44px;
+    max-width: 290px;
+    position: absolute;
+    right: 14%;
+    top: 14%;
+    font-weight: 300;
+    z-index: 2;
+}
+
+.lp-banner-principal h1 b {
+    font-weight: 400;
+}
+
+.lp-banner-principal p {
+    z-index: 2;
+    display: flex;
+    gap: 10px;
+    align-items: end;
+    font-size: 120px;
+    line-height: 100px;
+    font-weight: 100;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.lp-banner-principal p span {
+    font-style: italic;
+}
+
+.lp-banner-principal p b {
+    font-size: 0;
+    background: url(../images/Dove.png) no-repeat scroll right center transparent;
+    overflow: hidden;
+    background-size: 280px;
+    width: 280px;
+    height: 180px;
+}
+
+.lp-cronometro .lp-effect-1 {
+    top: 44%;
+    left: 0;
+}
+
+.lp-cronometro .lp-effect-2 {
+    top: 20%;
+    right: 0;
+    width: 50%;
+}
+
+.lp-cronometro .lp-effect-3 {
+    bottom: 36%;
+    right: 0;
+    width: 40%;
+}
+
+.lp-cronometro-coluna-esquerda-conteudo {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    font-size: 44px;
+    line-height: 54px;
+    max-width: 30%;
+    transform: translateY(-50%);
+}
+
+.lp-cronometro-coluna-esquerda-conteudo h2 {
+    position: fixed;
+    top: -1233321px;
+    left: -1233321px;
+}
+
+.lp-cronometro-coluna-esquerda-conteudo p {
+    font-weight: 300;
+}
+
+.lp-cronometro-coluna-esquerda-conteudo p b {
+    font-weight: 400;
+}
+
+.lp-cronometro-coluna-esquerda-conteudo-image {
+    width: 260px;
+    height: 200px;
+    background: url(../images/Dove.png) no-repeat scroll right center transparent;
+    background-size: 250px;
+    margin: 50px -60px 0 auto;
+}
+
+.lp-cronometro-coluna-direita p {
+    position: absolute;
+    bottom: 10%;
+    left: 54%;
+    max-width: 430px;
+    font-size: 40px;
+    line-height: 44px;
+    font-weight: 300;
+}
+
+.lp-cronometro-coluna-direita p b {
+    display: block;
+    font-weight: 500;
+}
+
+.lp-cronometro-coluna-direita-relogio {
+    position: absolute;
+    left: 44%;
+    top: 30%;
+    right: 8%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: center;
+}
+
+.lp-cronometro-coluna-direita-relogio>div {}
+
+.lp-cronometro-coluna-direita-relogio>div b {
+    display: block;
+    font-size: 100px;
+    line-height: 180px;
+    width: 180px;
+    height: 180px;
+    border-radius: 100%;
+    font-weight: bold;
+    box-shadow: 10px 0 10px 10px rgba(0, 0, 0, .1);
+    background: #DEDFE5;
+    background: linear-gradient(90deg, rgba(222, 223, 229, 1) 0%, rgba(255, 255, 255, 1) 45%);
+}
+
+.lp-cronometro-coluna-direita-relogio>div span {
+    margin-top: 30px;
+    display: block;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.lp-cronometro-coluna-direita-relogio-divisor {
+    font-size: 80px;
+    line-height: 180px;
+}
+
+.lp-e-agora {
+    background: url(../images/DOVE_CREME_169483.png) no-repeat scroll -100px bottom #f9fbfe;
+    background-size: 80% auto;
+}
+
+.lp-e-agora .lp-effect-1 {
+    right: 0;
+    top: calc(10% + 60px);
+}
+
+.lp-e-agora h2 {
+    margin: 0;
+    padding-top: 5%;
+    text-align: right;
+    font-size: 160px;
+    letter-spacing: 100px;
+    font-weight: 300;
+    line-height: 160px;
+    font-style: italic;
+}
+
+.lp-e-agora-conteudo {
+    position: absolute;
+    bottom: 20%;
+    right: 10%;
+    width: 100%;
+    max-width: 480px;
+}
+
+.lp-e-agora p {
+    width: 100%;
+    font-size: 40px;
+    line-height: 44px;
+    font-weight: 300;
+}
+
+.lp-e-agora p .lp-e-agora-conteudo-txt-dove {
+    display: block;
+    font-weight: bold;
+    ;
+}
+
+.lp-e-agora p .lp-e-agora-conteudo-txt-frete {
+    font-weight: bold;
+    ;
+    color: #ff0063;
+}
+
+.lp-e-agora button {
+    background-color: transparent;
+    padding: 0;
+    height: 50px;
+    border: 0 none;
+    font-size: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #041f5a;
+    margin-top: 60px;
+    font-weight: bold;
+}
+
+.lp-pre-cadastro {
+    padding: 0;
+}
+
+.lp-pre-cadastro .container {
+    min-height: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 900px;
+}
+
+.lp-pre-cadastro h2 {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.lp-pre-cadastro-form {
+    margin-top: 50px;
+    display: grid;
+    gap: 20px
+}
+
+.lp-pre-cadastro-form-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.lp-pre-cadastro label {
+    font-size: 26px;
+    line-height: 30px;
+    color: #041f5a;
+}
+
+.lp-pre-cadastro-form-group label {
+    width: 15%;
+}
+
+.lp-pre-cadastro-form-group input {
+    background: #DEDFE5;
+    background: linear-gradient(90deg, rgba(222, 223, 229, 1) 30%, rgba(255, 255, 255, 1) 100%);
+    border-radius: 6px;
+    padding: 0 15px;
+    height: 50px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
+    border: 1px solid rgba(222, 223, 229, 1);
+    font-size: 20px;
+    line-height: 20px;
+    width: 85%;
+}
+
+.lp-pre-cadastro-form-cta {
+    display: table;
+    margin: auto;
+    min-width: 200px;
+    cursor: pointer;
+    background: #DEDFE5;
+    background: linear-gradient(90deg, rgba(222, 223, 229, 1) 30%, rgba(255, 255, 255, 1) 100%);
+    border-radius: 25px;
+    padding: 0 15px;
+    height: 50px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
+    border: 1px solid rgba(222, 223, 229, 1);
+    font-size: 20px;
+    line-height: 20px;
+    transition: 300ms all;
+}
+
+.lp-pre-cadastro-form-check-box {
+    margin: 0 auto 0;
+    display: table;
+}
+
+.lp-pre-cadastro-form-check {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lp-pre-cadastro-form-check input {
+    width: 20px;
+    height: 20px;
+}
+
+.lp-pre-cadastro-form-cta:hover {
+    background: linear-gradient(90deg, rgba(222, 223, 229, 1) 30%, rgba(222, 223, 229, 1) 100%);
+}
+
+.lp-mini-banners {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lp-mini-banners>[class*="lp-mini-banners-item"] {
+    flex: 0 0 33.3333%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.lp-mini-banners-item-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-height: 100%;
+    text-align: center;
+}
+
+.lp-mini-banners-item-center h2 {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.lp-mini-banners-item-center h2 b {
+    font-weight: 600;
+}
+
+.lp-mini-banners-item-center p {
+    margin: 40px 0 0;
+    font-size: 34px;
+    line-height: 40px;
+    font-weight: 300;
+    ;
+}
+
+.lp-mini-banners .lp-mini-banners-item-1 {
+    background-color: #e194af;
+}
+
+.lp-mini-banners .lp-mini-banners-item-2 {
+    background-color: #ffb2d2;
+}
+
+.lp-mini-banners .lp-mini-banners-item-3 {
+    background-color: #f9cc9e;
+}
+
+.lp-mini-banners .lp-mini-banners-item-4 {
+    background-color: #b7a594;
+}
+
+.lp-mini-banners .lp-mini-banners-item-5 {
+    background-color: #c7b7de;
+}
+
+.lp-mini-banners .lp-mini-banners-item-6 {
+    background-color: #f9f9fd;
+}
+
+.lp-footer {
+    background-color: #041f5a;
+    color: #fff;
+    padding: 30px 0;
+}
+
+.lp-footer .container {
+    max-width: 1200px;
+}
+
+.lp-footer-content {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.lp-footer-content ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.lp-footer-content button {
+    background-color: transparent;
+    border: 0 none;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 0;
+    font-weight: 300;
+    transition: 300ms all;
+}
+
+.lp-footer-content button:hover {
+    opacity: .8;
+}
+
+.lp-footer-content img {
+    max-width: 120px;
+}
+
+.lp-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 1000;
+}
+
+.lp-modal-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(4 31 90 / 67%);
+}
+
+.lp-modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 0;
+    max-width: 900px;
+    width: 90%;
+    max-height: 90vh; /* Limita altura no máximo */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+.lp-modal-content:before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    width: 100px;
+    height: 50px;
+    background: url('../images/icone.png') no-repeat scroll center transparent;
+    background-size: cover;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 3;
+}
+
+.lp-modal-header {
+    padding: 40px 40px 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: #fff;
+}
+
+.lp-modal-header h3 {
+    margin: 0;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.lp-modal-close {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #041f5a;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.lp-modal-body {
+    padding: 110px 40px 40px;
+    font-size: 18px;
+    color: #041f5a;
+    overflow: auto; /* Scroll aparece apenas quando precisar */
+}
+
+.lp-modal-body-scroll {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    overflow: auto;
+}
+.lp-modal-body h4{
+    font-size: 26px;
+    line-height: 30px;
+    margin: 15px 0 10px;
+}
+.lp-modal-body p{
+    font-size: 16px;
+    line-height: 26px;
+    margin: 5px 0 10px;
+    font-weight: 300;
+}
