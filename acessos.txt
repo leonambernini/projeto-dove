@@ -1,0 +1,3 @@
+https://api-clubebanhodove.lojasages.com.br
+ssh -p 6539 zerbini@179.127.30.4
+QzCwBAOODVOq%v
