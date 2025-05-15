@@ -21,6 +21,10 @@ const PORT = process.env.PORT || 3444;
 app.listen(PORT, () => {
     console.log(`✅ Servidor rodando na porta ${PORT}`);
 }).on('error', (err) => {
-    console.error('❌ Erro no servidor:', err);
+    if (err.code === 'EADDRINUSE') {
+        console.error(`❌ Porta ${PORT} já está em uso. Finalize o processo anterior ou use outra porta.`);
+        process.exit(1); // Finaliza de vez
+    } else {
+        console.error('❌ Erro no servidor:', err);
+    }
 });
-
