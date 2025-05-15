@@ -3,9 +3,19 @@ const express = require('express');
 const router = express.Router();
 const crypto = require('crypto');
 
-console.log(process.env.CLIENT_SECRET)
 
-const CLIENT_SECRET = `${process.env.CLIENT_SECRET}`; // define no .env
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
+
+if (!CLIENT_SECRET) {
+    throw new Error("CLIENT_SECRET não definido no .env");
+}
+
+const signature = crypto
+    .createHmac('sha256', CLIENT_SECRET)
+    .update('123')
+    .digest('hex');
+
+console.log(signature);
 
 // Middleware para verificar o HMAC do Proxy
 function verifyProxyRequest(req, res, next) {
