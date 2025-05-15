@@ -1,5 +1,5 @@
 <div class="lp-dove-scrubs">
-	<% if (exibirContador) { %>
+	<% if (exibirContador || 1 === 1) { %>
     	<!-- Exibe cronômetro -->
 		<section class="lp-cronometro" data-final="<%= timerEnd %>">
 			<div class="row no-gutters">
@@ -44,7 +44,7 @@
 		</section>
 	<% } %>
 
-	<% if ( liberarProdutos) { %>
+	<% if ( liberarProdutos || 1 === 1) { %>
 		<section class="lp-e-agora">
 			<h2>É AGORA!</h2>
 			<div class="row no-gutters">
@@ -54,7 +54,7 @@
 				<div class="col-12 col-md-3">
 					<div class="lp-e-agora-content">
 						<p>Garanta já seu <b class="lp-e-agora-conteudo-txt-dove">DOVE BEAUTY SCRUB</b> com <b>FRETE GRÁTIS</b> <br />e seja uma das primeiras pessoas
-						a sentir essa novidade na pele.</p>
+						a sentir essa novidade na pele</p>
 					
 						<button class="btn-dove js-btn-scroll-to-produtos" data-scroll="#produtos">EU QUERO</button>
 					</div>
