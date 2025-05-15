@@ -10,15 +10,9 @@ if (!CLIENT_SECRET) {
     throw new Error("CLIENT_SECRET não definido no .env");
 }
 
-const signature = crypto
-    .createHmac('sha256', CLIENT_SECRET)
-    .update('123')
-    .digest('hex');
-
-console.log(signature);
-
 // Middleware para verificar o HMAC do Proxy
 function verifyProxyRequest(req, res, next) {
+    console.log('ENTROU AQUI!', req.header)
     const storeId = req.header('X-Store-Id') || '';
     const customerId = req.header('X-Customer-Id') || '';
     const requestId = req.header('X-Request-Id') || '';
