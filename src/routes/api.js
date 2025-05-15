@@ -1,18 +1,6 @@
 const axios = require('axios');
-const Customer = require('../models/Customers');
 const express = require('express');
 const router = express.Router();
-
-router.get('/', async (req, res) => {
-    const customers = await Customer.find();
-    res.json(customers);
-});
-
-router.post('/', async (req, res) => {
-    const customer = new Customer({ name: req.body.name });
-    await customer.save();
-    res.json(customer);
-});
 
 router.get('/external', async (req, res) => {
     try {
