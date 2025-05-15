@@ -26,3 +26,12 @@ const PORT = process.env.PORT || 3444;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
+
+process.on('uncaughtException', (err) => {
+    console.error('Erro não capturado:', err);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Rejeição não tratada:', reason);
+});
+
