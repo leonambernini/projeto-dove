@@ -19,5 +19,8 @@ app.use('/proxy', proxyRoutes);
 
 const PORT = process.env.PORT || 3444;
 app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
+    console.log(`✅ Servidor rodando na porta ${PORT}`);
+}).on('error', (err) => {
+    console.error('❌ Erro no servidor:', err);
 });
+
