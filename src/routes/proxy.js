@@ -33,7 +33,7 @@ function verifyProxyRequest(req, res, next) {
     next();
 }
 
-router.get('/', verifyProxyRequest, (req, res) => {
+router.get('/', (req, res) => {
     res.setHeader("Content-Type", "text/html");
     res.setHeader("X-Embed", "true");
 
