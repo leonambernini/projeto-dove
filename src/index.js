@@ -8,16 +8,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 // Conexão com MongoDB
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(() => {
-    console.log('✅ Conectado ao MongoDB');
-}).catch((err) => {
-    console.error('❌ Erro ao conectar no MongoDB:', err);
-});
-
-
+mongoose.connect(process.env.MONGO_URI)
+mongoose.set('strictQuery', true); // ou false, dependendo da tua necessidade
 
 const app = express();
 
