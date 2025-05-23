@@ -155,6 +155,7 @@ router.post('/validate', async (req, res) => {
 router.post('/customer', async (req, res) => {
     try {
         const novo = await Customer.create({ nome: req.body.nome });
+        console.log(novo)
         res.status(201).json(novo);
     } catch (err) {
         console.error('Erro ao inserir:', err);
