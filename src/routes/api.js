@@ -154,6 +154,7 @@ router.post('/validate', async (req, res) => {
 // POST /api/teste – cria novo
 router.post('/customer', async (req, res) => {
     try {
+        console.log(`ENTROU AQUI!`)
         const novo = await Customer.create({ nome: req.body.nome });
         console.log(novo)
         res.status(201).json(novo);
