@@ -1,6 +1,7 @@
 const axios = require('axios');
 const express = require('express');
 const router = express.Router();
+const Customer = require('../models/Customer');
 
 router.get('/external', async (req, res) => {
     try {
@@ -150,5 +151,26 @@ router.post('/validate', async (req, res) => {
     }
 });
 
+// POST /api/teste – cria novo
+router.post('/customer', async (req, res) => {
+    try {
+        const novo = await Customer.create({ nome: req.body.nome });
+        res.status(201).json(novo);
+    } catch (err) {
+        console.error('Erro ao inserir:', err);
+        res.status(500).json({ erro: 'Erro ao inserir' });
+    }
+});
+
+// GET /api/teste – lista todos
+router.get('/customer', async (req, res) => {
+    try {
+        const lista = await Customer.find().sort({ criadoEm: -1 });
+        res.json(lista);
+    } catch (err) {
+        console.error('Erro ao buscar:', err);
+        res.status(500).json({ erro: 'Erro ao buscar' });
+    }
+});
 
 module.exports = router;
