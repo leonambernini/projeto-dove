@@ -171,6 +171,9 @@ router.post('/webhooks', async (req, res) => {
     try {
         console.log(`ENTROU AQUI!`)
         console.log(req.body)
+
+        // 4595af9e-b565-4c5f-945b-100e2fd39344
+
         res.status(200).end();
     } catch (err) {
         console.error('Erro ao inserir:', err);
@@ -180,11 +183,27 @@ router.post('/webhooks', async (req, res) => {
 
 router.post('/customer', async (req, res) => {
     try {
+        const { email, document, cart_id, customer_id, date } = req.body;
         console.log(`ENTROU AQUI!`)
         console.log(req.body)
-        // const novo = await Customer.create({ nome: req.body.nome });
+        const customer = await Customer.findOneAndUpdate(
+            { cart_id }, // critério de busca (pode ser outro campo único)
+            {
+                email,
+                document,
+                cart_id,
+                external_id: customer_id ?? null,
+                date,
+            },
+            {
+                new: true,      // retorna o documento atualizado
+                upsert: true,   // cria se não existir
+                setDefaultsOnInsert: true,
+            }
+        );
+
         // console.log(novo)
-        res.status(201).json(req.body);
+        res.status(201).json(customer);
     } catch (err) {
         console.error('Erro ao inserir:', err);
         res.status(500).json({ erro: 'Erro ao inserir' });
