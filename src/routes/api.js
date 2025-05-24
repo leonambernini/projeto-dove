@@ -192,7 +192,7 @@ router.post('/webhooks', async (req, res) => {
                 if (customer && customer.identification) {
                     const tempDate = backupCustomer.date.split('/');
                     const saveDate = `${tempDate[2]}-${tempDate[1]}-${tempDate[0]}`;
-                    await axios.post(`https://api.nuvemshop.com.br/v1/${process.env.STORE_ID}/customers/${customer.id}/custom-fields/values`,
+                    await axios.put(`https://api.nuvemshop.com.br/v1/${process.env.STORE_ID}/customers/${customer.id}/custom-fields/values`,
                         [
                             {
                                 "id": "4595af9e-b565-4c5f-945b-100e2fd39344",
