@@ -100,55 +100,70 @@ router.post('/validate', async (req, res) => {
     const { document } = req.body;
 
     if (!document) {
-        return res.status(400).json({ message: 'Dados inválidos.' });
+        res.status(400).json({ message: 'Dados inválidos.' });
+        return;
     }
 
     try {
-        const customerResponse = await axios.get(`https://api.nuvemshop.com.br/v1/${process.env.STORE_ID}/customers?q=${document}&fields=id`, {
-            headers: {
-                'Authentication': process.env.TOKEN,
-                'Content-Type': 'application/json'
-            }
-        });
-
-        console.log(customerResponse.data)
-        const customers = customerResponse.data;
-        if (customers.length) {
-            const ids = [];
-
-            for (let x = 0; x < customers.length; x++) {
-                ids.push(customers[x].id);
-            }
-
-            const orderResponse = await axios.get(`https://api.nuvemshop.com.br/v1/${process.env.STORE_ID}/orders?customer_ids=${ids.join(',')}&fields=id`, {
-                headers: {
-                    'Authentication': process.env.TOKEN,
-                    'Content-Type': 'application/json'
-                }
-            });
-            if (orderResponse.data && orderResponse.data.length) {
-                return res.status(200).json({
-                    blockcustomer: true
-                })
-            }
+        const customer = await Customer.findOne({ document, finish: true });
+        if (customer) {
+            res.status(200).json({ blockcustomer: true })
+            return;
         }
-
-        return res.status(200).json({
-            blockcustomer: false
-        })
-
-    } catch (err) {
-        console.error('Erro ao consultar cliente por documento:', err.response?.data || err.message);
-        if (err.response && err.response.status === 404) {
-            return res.status(200).json({
-                blockcustomer: false,
-                status: err.response.status,
-                data: err.response.data
-            });
-        }
-
-        return res.status(500).json({ blockcustomer: true, status: 500, data: err.message })
+    } catch (error) {
+        res.status(500).json({ message: "Erro ao consultar" })
+        return;
     }
+
+    res.status(200).json({ blockcustomer: false })
+    return;
+
+    // try {
+    //     const customerResponse = await axios.get(`https://api.nuvemshop.com.br/v1/${process.env.STORE_ID}/customers?q=${document}&fields=id`, {
+    //         headers: {
+    //             'Authentication': process.env.TOKEN,
+    //             'Content-Type': 'application/json'
+    //         }
+    //     });
+
+    //     console.log(customerResponse.data)
+    //     const customers = customerResponse.data;
+    //     if (customers.length) {
+    //         const ids = [];
+
+    //         for (let x = 0; x < customers.length; x++) {
+    //             ids.push(customers[x].id);
+    //         }
+
+    //         const orderResponse = await axios.get(`https://api.nuvemshop.com.br/v1/${process.env.STORE_ID}/orders?customer_ids=${ids.join(',')}&fields=id`, {
+    //             headers: {
+    //                 'Authentication': process.env.TOKEN,
+    //                 'Content-Type': 'application/json'
+    //             }
+    //         });
+    //         if (orderResponse.data && orderResponse.data.length) {
+    //             return res.status(200).json({
+    //                 blockcustomer: true
+    //             })
+    //         }
+    //     }
+
+    //     return res.status(200).json({
+    //         blockcustomer: false
+    //     })
+
+    // } catch (err) {
+    //     console.error('Erro ao consultar cliente por documento:', err.response?.data || err.message);
+    //     if (err.response && err.response.status === 404) {
+    //         return res.status(200).json({
+    //             blockcustomer: false,
+    //             status: err.response.status,
+    //             data: err.response.data
+    //         });
+    //     }
+
+    //     return res.status(500).json({ blockcustomer: true, status: 500, data: err.message })
+    // }
 });
 
 // POST /api/teste – cria novo
