@@ -170,7 +170,61 @@ router.post('/validate', async (req, res) => {
 router.post('/webhooks', async (req, res) => {
     try {
         console.log(`ENTROU AQUI!`)
-        console.log(req.body)
+        const { store_id, event, id } = req.body
+
+        if (event === 'order/created') {
+            const customer = await Customer.findOne({ cart_id: id });
+
+            if (!customer) {
+                res.status(200).end();
+                return;
+            }
+
+            const resOrder = await axios.get(`https://api.nuvemshop.com.br/v1/${process.env.STORE_ID}/orders/${id}?fields=id,customer`, {
+                headers: {
+                    'Authentication': process.env.TOKEN,
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (resOrder.status === 200) {
+                const { customer } = resOrder.data;
+                if (customer && customer.identification) {
+                    const tempDate = customer.date.split('/');
+                    const saveDate = `${tempDate[2]}-${tempDate[1]}-${tempDate[0]}`;
+                    await axios.post(`https://api.nuvemshop.com.br/v1/${process.env.STORE_ID}/customers/${customer.id}/custom-fields/values`,
+                        [
+                            {
+                                "id": "4595af9e-b565-4c5f-945b-100e2fd39344",
+                                "value": saveDate
+                            }
+                        ]
+                        , {
+                            headers: {
+                                'Authentication': process.env.TOKEN,
+                                'Content-Type': 'application/json'
+                            }
+                        });
+
+                    const customer = await Customer.findOneAndUpdate(
+                        { cart_id }, // critério de busca (pode ser outro campo único)
+                        {
+                            email: customer.email,
+                            document: customer.identification,
+                            external_id: customer.id,
+                            date,
+                            finish: true
+                        },
+                        {
+                            new: true,      // retorna o documento atualizado
+                            upsert: true,   // cria se não existir
+                            setDefaultsOnInsert: true,
+                        }
+                    );
+
+                }
+            }
+        }
 
         // 4595af9e-b565-4c5f-945b-100e2fd39344
 
