@@ -212,7 +212,7 @@ router.post('/webhooks', async (req, res) => {
                             email: customer.email,
                             document: customer.identification,
                             external_id: customer.id,
-                            date,
+                            date: saveDate,
                             finish: true
                         },
                         {
