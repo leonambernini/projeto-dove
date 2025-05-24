@@ -173,9 +173,9 @@ router.post('/webhooks', async (req, res) => {
         const { store_id, event, id } = req.body
 
         if (event === 'order/created') {
-            const customer = await Customer.findOne({ cart_id: id });
+            const backupCustomer = await Customer.findOne({ cart_id: id });
 
-            if (!customer) {
+            if (!backupCustomer) {
                 res.status(200).end();
                 return;
             }
@@ -206,7 +206,7 @@ router.post('/webhooks', async (req, res) => {
                             }
                         });
 
-                    const customer = await Customer.findOneAndUpdate(
+                    const updatedCustomer = await Customer.findOneAndUpdate(
                         { cart_id }, // critério de busca (pode ser outro campo único)
                         {
                             email: customer.email,
