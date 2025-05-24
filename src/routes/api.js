@@ -207,7 +207,7 @@ router.post('/webhooks', async (req, res) => {
                         });
 
                     await Customer.findOneAndUpdate(
-                        { cart_id }, // critério de busca (pode ser outro campo único)
+                        { cart_id: id }, // critério de busca (pode ser outro campo único)
                         {
                             email: customer.email,
                             document: customer.identification,
