@@ -105,7 +105,16 @@ router.post('/validate', async (req, res) => {
     }
 
     try {
-        const customer = await Customer.findOne({ document, finish: true });
+        const normalizeDoc = (doc) => doc.replace(/\D/g, '');
+
+        const rawDoc = document;
+        const cleanDoc = normalizeDoc(document);
+
+        const customer = await Customer.findOne({
+            finish: true,
+            document: { $in: [rawDoc, cleanDoc] }
+        });
+
         if (customer) {
             res.status(200).json({ blockcustomer: true })
             return;
