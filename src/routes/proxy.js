@@ -39,7 +39,7 @@ router.get('/', (req, res) => {
 
     const now = new Date();
     const today18h = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 18, 0, 0);
-    const today20h = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 20, 0, 0);
+    const today1930 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 19, 30, 0);
 
     let flags = {
         liberarProdutos: false,
@@ -48,7 +48,7 @@ router.get('/', (req, res) => {
 
     let timerEnd;
 
-    if (now >= today18h && now < today20h) {
+    if (now >= today18h && now < today1930) {
         // Entre 18h e 20h → LIBERAR PRODUTOS
         flags.liberarProdutos = true;
     } else {
