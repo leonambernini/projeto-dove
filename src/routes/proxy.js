@@ -39,7 +39,7 @@ router.get('/', (req, res) => {
 
     const now = new Date();
     const today18h = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 18, 0, 0);
-    const today1930 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 19, 30, 0);
+    const today1930 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 0);
 
     let flags = {
         liberarProdutos: false,
