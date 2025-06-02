@@ -1,5 +1,5 @@
 <div class="lp-dove-scrubs">
-	<% if (exibirContador ) { %>
+	<% if (exibirContador && 1 == 2) { %>
 	<section class="lp-cronometro" data-final="<%= timerEnd %>">
 		<div class="row no-gutters">
 			<div class="col-12 col-md-5">
@@ -43,7 +43,22 @@
 	</section>
 	<% } %>
 
-	<% if ( liberarProdutos  ) { %>
+	<section class="lp-e-agora">
+		<h2>PRÉ-VENDA <b>ENCERRADA!</b></h2>
+		<div class="row no-gutters">
+			<div class="col-12 col-md-9">
+				<img src="https://d1a9qnv764bsoo.cloudfront.net/stores/006/176/073/rte/Pódio_Éagora.png" alt="Podio" class="img-fluid" />
+				<div class="lp-e-agora-small my-2 text-center"><small>Vendas limitadas por dia. Apenas 1 unidade por CPF.</small></div>
+			</div>
+			<div class="col-12 col-md-3">
+				<div class="lp-e-agora-content">
+					<p>Em breve <b class="lp-e-agora-conteudo-txt-dove d-block">DOVE BEAUTY SCRUB</b> estará disponível nas lojas.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<% if ( liberarProdutos && 1 == 2  ) { %>
 	<section class="lp-e-agora">
 		<h2>É AGORA!</h2>
 		<div class="row no-gutters">
